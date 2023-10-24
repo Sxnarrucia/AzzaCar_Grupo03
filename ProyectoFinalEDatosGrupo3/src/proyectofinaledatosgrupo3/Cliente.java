@@ -30,6 +30,15 @@ public class Cliente {
         this.numCliente = numCliente;
     }
 
+    public Cliente(int idCliente, String nombreCliente, String apellidosCliente, int cedulaCliente, String correoCliente, int numCliente) {
+        this.idCliente = idCliente;
+        this.nombreCliente = nombreCliente;
+        this.apellidosCliente = apellidosCliente;
+        this.cedulaCliente = cedulaCliente;
+        this.correoCliente = correoCliente;
+        this.numCliente = numCliente;
+    }
+    
     public int getIdCliente() {
         return idCliente;
     }
@@ -80,9 +89,9 @@ public class Cliente {
     
     @Override
     public String toString(){
-       return "Cliente{" + "Nombre=" + nombreCliente + ", Apellidos=" 
-               + apellidosCliente + ", Cedula=" + cedulaCliente + ", Correo=" 
-               + correoCliente + ", Numero=" + numCliente + '}';
+       return "Cliente{" + "ID =" + idCliente + ", Nombre =" + nombreCliente + ", Apellidos =" 
+               + apellidosCliente + ", Cedula =" + cedulaCliente + ", Correo =" 
+               + correoCliente + ", Numero =" + numCliente + '}';
     }
     
 }
