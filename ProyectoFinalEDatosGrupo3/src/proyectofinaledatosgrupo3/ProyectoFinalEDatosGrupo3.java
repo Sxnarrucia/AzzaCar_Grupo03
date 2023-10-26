@@ -4,6 +4,8 @@
  */
 package proyectofinaledatosgrupo3;
 
+import Modelo.Cliente;
+
 public class ProyectoFinalEDatosGrupo3 {
 
     public static void main(String[] args) {

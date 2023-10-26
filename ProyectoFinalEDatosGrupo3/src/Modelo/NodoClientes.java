@@ -1,4 +1,6 @@
-package proyectofinaledatosgrupo3;
+package Modelo;
+
+import Modelo.Cliente;
 
 public class NodoClientes {
 
