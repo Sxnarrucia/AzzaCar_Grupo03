@@ -1,5 +1,7 @@
 package proyectofinaledatosgrupo3;
 
+import Modelo.NodoClientes;
+import Modelo.Cliente;
 import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
