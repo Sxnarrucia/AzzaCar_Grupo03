@@ -17,7 +17,7 @@ public class LoginView {
         return true;
     }
 
-    public Usuario crearUsuario() {
+    public static Usuario crearUsuarioView() {
 
         MultiFrame creacionU = new MultiFrame();
 
@@ -30,10 +30,8 @@ public class LoginView {
         String telf = creacionU.getjTextField5().getText();
         String contraseña = creacionU.getjTextField6().getText();
 
-        System.out.println(nombre + apellido + id + correo + telf + contraseña);
 
         Usuario nuevoUsuario = new Usuario(nombre, apellido, id, correo, telf, contraseña);
-        System.out.println(nuevoUsuario);
         return nuevoUsuario;
     }
 

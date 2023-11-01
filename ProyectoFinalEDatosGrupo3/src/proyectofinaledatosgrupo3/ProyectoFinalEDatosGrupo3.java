@@ -1,15 +1,13 @@
 package proyectofinaledatosgrupo3;
 
 import Modelo.Cliente;
-import Vista.LoginView;
+import Vista.MenuPrincipalView;
 
 public class ProyectoFinalEDatosGrupo3 {
 
     public static void main(String[] args) {
-        
-        LoginView p = new LoginView();
-        
-        p.crearUsuario();
+               
+        MenuPrincipalView.mostrarMenuPrincipal();
         
         
         ListaClientes l = new ListaClientes();
