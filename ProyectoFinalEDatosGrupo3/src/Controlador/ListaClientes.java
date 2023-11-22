@@ -1,4 +1,4 @@
-package proyectofinaledatosgrupo3;
+package Controlador;
 
 import Modelo.NodoClientes;
 import Modelo.Cliente;
