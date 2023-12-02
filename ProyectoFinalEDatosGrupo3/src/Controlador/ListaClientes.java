@@ -13,6 +13,12 @@ public class ListaClientes {
         this.cabeza = null;
     }
 
+    public void ingresarDatos() {
+        ListaClientes l = new ListaClientes();
+        l.inserta(new Cliente("Esteban", "Sanarrucia Molina", 1, "esteban9926@hotmail.com", 60319926));
+        l.inserta(new Cliente("Jose", "Perez Ortega", 2, "jose@hotmail.com", 60948504));
+    }
+
     public void inserta(Cliente cDato) {
         //verificar ID cliente
         if (existeClienteID(cDato.getCedulaCliente())) {
@@ -88,7 +94,7 @@ public class ListaClientes {
         int opcion = 0;
         if (cabeza == null) {
             System.out.println("La lista se encuentra vacía");
-        } else if (cabeza.getDato().getIdCliente() == id) {
+        } else if (cabeza.getDato().getCedulaCliente() == id) {
             try {
                 opcion = Integer.parseInt(JOptionPane.showInputDialog("¿Qué desea modificar?\n"
                         + " 1 = Primer Nombre del Cliente\n "
@@ -131,7 +137,7 @@ public class ListaClientes {
             while (aux.getSiguiente() != null && aux.getSiguiente().getDato().getIdCliente() <= id) {
                 aux = aux.getSiguiente();
             }
-            if (aux.getDato().getIdCliente() == id) {
+            if (aux.getDato().getCedulaCliente() == id) {
                 try {
                     opcion = Integer.parseInt(JOptionPane.showInputDialog("¿Qué desea modificar?\n"
                             + " 1 = Primer Nombre del Cliente\n "

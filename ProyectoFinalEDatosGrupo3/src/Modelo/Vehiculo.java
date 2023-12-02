@@ -8,7 +8,7 @@ package Modelo;
  *
  * @author jefer
  */
-public class Vehiculos {
+public class Vehiculo {
 
     //Atributos
     private String color, marca, tipo, estado, modelo;
@@ -23,7 +23,11 @@ public class Vehiculos {
     }
 
     //Constructor
-    public Vehiculos(String color, String marca, String tipo, String modelo, String estado, int anio, int cilindraje, int kilometraje, int cantidadDePuertas, int capacidadDeCarga) {
+
+    public Vehiculo() {
+    }
+    
+    public Vehiculo(String color, String marca, String tipo, String modelo, String estado, int anio, int cilindraje, int kilometraje, int cantidadDePuertas, int capacidadDeCarga) {
         setNuevoId();
         this.color = color;
         this.marca = marca;

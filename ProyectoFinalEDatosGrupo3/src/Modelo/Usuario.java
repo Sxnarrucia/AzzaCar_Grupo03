@@ -8,9 +8,10 @@ public class Usuario {
     private String correoEUsuario;
     private String telUsuario;
     private String contraseñaUsuario;
-     
-    
 
+    public Usuario() {
+    }
+    
     public Usuario(int idUsuario,String nombreUsuario, String apellidoUsuario, String correoEUsuario, String telUsuario, String contraseñaUsuario) {
         this.nombreUsuario = nombreUsuario;
         this.apellidoUsuario = apellidoUsuario;
@@ -70,7 +71,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "nombreUsuario=" + nombreUsuario + ", apellidoUsuario=" + apellidoUsuario + ", idUsuario=" + idUsuario + ", correoEUsuario=" + correoEUsuario + ", telUsuario=" + telUsuario + ", contrase\u00f1aUsuario=" + contraseñaUsuario + '}';
+        return "Usuario{" + nombreUsuario + ", Apellido Usuario=" + apellidoUsuario + ", ID Usuario=" + idUsuario + ", Correo Usuario=" + correoEUsuario + ", Telefono Usuario=" + telUsuario + '}';
     }
 
 }

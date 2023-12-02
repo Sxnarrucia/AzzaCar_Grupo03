@@ -6,6 +6,7 @@ import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.nio.charset.StandardCharsets;
 import javax.swing.JOptionPane;
 
 public class ListaUsuarios {
@@ -99,13 +100,12 @@ public class ListaUsuarios {
     }
 
     public void EscribirEnArchivo(String correoUsuario, String passwordUsuario) {
+        String rutaArchivo = "C:\\Users\\esanarru\\Documents\\GitHub\\EstructuraDatos_Grupo03\\ProyectoFinalEDatosGrupo3\\usuarios.txt";
         try {
-            BufferedWriter archivo = new BufferedWriter(new FileWriter("C:\\Users\\esanarru\\Documents\\GitHub\\EstructuraDatos_Grupo03\\ProyectoFinalEDatosGrupo3\\usuarios.txt", true));
-            archivo.write("Usuario: "+ correoUsuario);
+            BufferedWriter archivo = new BufferedWriter(new FileWriter(rutaArchivo, StandardCharsets.UTF_16LE, true));
+            archivo.write("Usuario: " + correoUsuario);
             archivo.write(", Contraseña: " + passwordUsuario);
             archivo.newLine();
-            JOptionPane.showMessageDialog(null, "Datos guardados correctamente!", "Agregar Datos",
-                    JOptionPane.INFORMATION_MESSAGE);
             archivo.close();
         } catch (Exception e) {
             e.printStackTrace();
