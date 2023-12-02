@@ -30,6 +30,6 @@ public class NodoClientes {
 
     @Override
     public String toString() {
-        return "dato=" + dato + '}';
+        return "Cliente: " + dato;
     }
 }

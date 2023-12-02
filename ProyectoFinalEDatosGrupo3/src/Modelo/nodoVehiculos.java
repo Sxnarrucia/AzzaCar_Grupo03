@@ -17,12 +17,6 @@ public class nodoVehiculos {
     this.dato=dato;
     this.back=this.next=null;
     }
-
-
-    
-    
-    
-    
     //gets and sets
 
     public Vehiculos getDato() {

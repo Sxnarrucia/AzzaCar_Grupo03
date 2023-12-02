@@ -3,14 +3,11 @@ package proyectofinaledatosgrupo3;
 import Controlador.ListaClientes;
 import Modelo.Cliente;
 import Modelo.Vehiculos;
-import Vista.MenuPrincipalView;
 import controlador.listaVehiculos;
 
 public class ProyectoFinalEDatosGrupo3 {
 
     public static void main(String[] args) {
-
-        MenuPrincipalView.mostrarMenuPrincipal();
 
         
         ListaClientes l = new ListaClientes();

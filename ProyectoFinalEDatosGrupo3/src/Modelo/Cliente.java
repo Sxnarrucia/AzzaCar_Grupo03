@@ -89,9 +89,9 @@ public class Cliente {
     
     @Override
     public String toString(){
-       return "Cliente{" + "ID =" + idCliente + ", Nombre =" + nombreCliente + ", Apellidos =" 
-               + apellidosCliente + ", Cedula =" + cedulaCliente + ", Correo =" 
-               + correoCliente + ", Numero =" + numCliente + '}';
+       return  "ID: " + idCliente + ", Nombre: " + nombreCliente + ", Apellidos: " 
+               + apellidosCliente + ", Cedula: " + cedulaCliente + ", Correo: " 
+               + correoCliente + ", Numero: " + numCliente + '}';
     }
     
 }

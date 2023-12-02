@@ -13,8 +13,8 @@ public class Vehiculos {
     //Atributos
     private String color, marca, tipo, estado;
     private int id, anio, cilindraje, modelo, kilometraje, cantidadDePuertas, capacidadDeCarga;
-    private String cliente = null;
-    private String vendedor = null;
+    private Cliente cliente;
+    private Usuario vendedor;
 
     //Constructor
     public Vehiculos(String color, String marca, String tipo, int id, int anio, int cilindraje, int modelo, int kilometraje, int cantidadDePuertas, int capacidadDeCarga, String estado) {
@@ -29,6 +29,8 @@ public class Vehiculos {
         this.cantidadDePuertas = cantidadDePuertas;
         this.capacidadDeCarga = capacidadDeCarga;
         this.estado = estado;
+        this.cliente = null;
+        this.vendedor = null;
     }
     // get and set
 
@@ -120,26 +122,32 @@ public class Vehiculos {
         this.estado = estado;
     }
 
-    public String getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 
-    public void setCliente(String cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
-    public String getVendedor() {
+    public Usuario getVendedor() {
         return vendedor;
     }
 
-    public void setVendedor(String vendedor) {
+    public void setVendedor(Usuario vendedor) {
         this.vendedor = vendedor;
     }
 
     //to string
     @Override
     public String toString() {
-        return "Vehiculos{" + "color=" + color + ", marca=" + marca + ", tipo=" + tipo + ", a\u00f1o=" + anio + ", cilindraje=" + cilindraje + ", modelo=" + modelo + ", kilometraje=" + kilometraje + ", cantidadDePuertas=" + cantidadDePuertas + ", capacidadDeCarga=" + capacidadDeCarga + ", estado=" + estado + ", cliente=" + cliente + ", vendedor=" + vendedor + '}';
+        return "Vehiculos{" + "color=" + color + ", marca=" + marca
+                + ", tipo=" + tipo + ", a\u00f1o=" + anio
+                + ", cilindraje=" + cilindraje + ", modelo=" + modelo
+                + ", kilometraje=" + kilometraje
+                + ", cantidadDePuertas=" + cantidadDePuertas
+                + ", capacidadDeCarga=" + capacidadDeCarga + ", estado=" + estado
+                + ", cliente=" + cliente + ", vendedor=" + vendedor + '}';
     }
 
 }
