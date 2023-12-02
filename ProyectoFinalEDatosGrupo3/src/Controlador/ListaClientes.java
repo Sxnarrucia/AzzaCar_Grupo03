@@ -14,6 +14,11 @@ public class ListaClientes {
     }
 
     public void inserta(Cliente cDato) {
+        //verificar ID cliente
+        if (existeClienteID(cDato.getCedulaCliente())) {
+            System.out.println("Ya existe un cliente con esta cedula");
+            return;
+        }
         //Crear el nuevo nodo a insertar
         NodoClientes nuevo = new NodoClientes(cDato);
 
@@ -73,8 +78,13 @@ public class ListaClientes {
             while (aux.getSiguiente() != null && aux.getSiguiente().getDato().getIdCliente() != id) {
                 aux = aux.getSiguiente();
             }
-            cliente = aux.getSiguiente().getDato();
-            return cliente;
+            if (aux.getSiguiente() != null) {
+                cliente = aux.getSiguiente().getDato();
+                return cliente;
+            } else {
+                System.out.println("No existe un cliente registrado con este ID");
+                return null;
+            }
         }
     }
 
@@ -193,6 +203,17 @@ public class ListaClientes {
             NodoClientes siguiente = aux.getSiguiente().getSiguiente();
             aux.setSiguiente(siguiente);
         }
+    }
+
+    public boolean existeClienteID(int idCliente) {
+        NodoClientes aux = cabeza;
+        while (aux != null) {
+            if (aux.getDato().getCedulaCliente() == idCliente) {
+                return true;
+            }
+            aux = aux.getSiguiente();
+        }
+        return false;
     }
 
     @Override

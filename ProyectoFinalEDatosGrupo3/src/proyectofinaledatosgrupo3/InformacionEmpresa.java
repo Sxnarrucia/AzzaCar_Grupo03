@@ -3,9 +3,9 @@ package proyectofinaledatosgrupo3;
 
 public class InformacionEmpresa {
     
-    String nombre= "AzzaCar"; 
-    String tel= "8888-8888";
-    String direccion= "Cartago, Cartago, Occidental";
+    private static String nombre= "AzzaCar"; 
+    private static String tel= "8888-8888";
+    private static String direccion= "Cartago, Cartago, Occidental";
 
     public String getNombre() {
         return nombre;

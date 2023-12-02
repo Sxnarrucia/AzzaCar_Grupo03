@@ -141,13 +141,13 @@ public class Vehiculos {
     //to string
     @Override
     public String toString() {
-        return "Vehiculos{" + "color=" + color + ", marca=" + marca
-                + ", tipo=" + tipo + ", a\u00f1o=" + anio
-                + ", cilindraje=" + cilindraje + ", modelo=" + modelo
-                + ", kilometraje=" + kilometraje
-                + ", cantidadDePuertas=" + cantidadDePuertas
-                + ", capacidadDeCarga=" + capacidadDeCarga + ", estado=" + estado
-                + ", cliente=" + cliente + ", vendedor=" + vendedor + '}';
+        return "Vehiculos: " + "Color: " + color + ", Marca: " + marca
+                + ", Tipo: " + tipo + ", Año: " + anio
+                + ", Cilindraje: " + cilindraje + ", Modelo: " + modelo
+                + ", Kilometraje: " + kilometraje + "\n"
+                + "Cantidad De Puertas: " + cantidadDePuertas
+                + ", Capacidad De Carga: " + capacidadDeCarga + ", Estado: " + estado
+                + ", Cliente: " + cliente + ", Vendedor: " + vendedor + '}';
     }
 
 }
