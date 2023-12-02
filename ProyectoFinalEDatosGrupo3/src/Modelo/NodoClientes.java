@@ -1,7 +1,5 @@
 package Modelo;
 
-import Modelo.Cliente;
-
 public class NodoClientes {
 
     private Cliente dato;
@@ -30,6 +28,6 @@ public class NodoClientes {
 
     @Override
     public String toString() {
-        return "Cliente: " + dato;
+        return "Cliente: {" + dato;
     }
 }

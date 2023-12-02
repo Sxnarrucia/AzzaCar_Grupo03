@@ -53,29 +53,25 @@ public class ListaClientes {
     public boolean existe(int cId) {
         if (cabeza == null) {
             return false;
-        } else if (cabeza.getDato().getIdCliente() == cId) {
+        } else if (cabeza.getDato().getCedulaCliente() == cId) {
             return true;
         } else {
             NodoClientes aux = cabeza;
-            while (aux.getSiguiente() != null && aux.getSiguiente().getDato().getIdCliente() <= cId) {
+            while (aux.getSiguiente() != null && aux.getDato().getCedulaCliente() != cId) {
                 aux = aux.getSiguiente();
             }
-            if (aux.getDato().getIdCliente() == cId) {
-                return true;
-            } else {
-                return false;
-            }
+            return aux.getDato().getCedulaCliente() == cId;
         }
     }
 
     public Cliente extrae(int id) {
         Cliente cliente = null;
-        if (cabeza.getDato().getIdCliente() == id) {
+        if (cabeza.getDato().getCedulaCliente() == id) {
             cliente = cabeza.getDato();
             return cliente;
         } else {
             NodoClientes aux = cabeza;
-            while (aux.getSiguiente() != null && aux.getSiguiente().getDato().getIdCliente() != id) {
+            while (aux.getSiguiente() != null && aux.getSiguiente().getDato().getCedulaCliente() != id) {
                 aux = aux.getSiguiente();
             }
             if (aux.getSiguiente() != null) {

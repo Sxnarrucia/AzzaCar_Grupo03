@@ -125,4 +125,19 @@ public class listaVehiculos {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        String r = null;
+        if (cabeza != null) {
+            r = "";
+            nodoVehiculos aux = cabeza;
+            while (aux != ultimo) {
+                r += aux + "\n";
+                aux = aux.getNext();
+            }
+            r += ultimo + "\n";
+        }
+        return r;
+    }
 }

@@ -2,20 +2,30 @@ package Modelo;
 
 public class Usuario {
 
-    String nombreUsuario;
-    String apellidoUsuario;
-    String idUsuario;
-    String correoEUsuario;
-    String telUsuario;
-    String contraseñaUsuario;
+    private String nombreUsuario;
+    private String apellidoUsuario;
+    private int idUsuario;
+    private String correoEUsuario;
+    private String telUsuario;
+    private String contraseñaUsuario;
+     
+    
 
-    public Usuario(String nombreUsuario, String apellidoUsuario, String idUsuario, String correoEUsuario, String telUsuario, String contraseñaUsuario) {
+    public Usuario(int idUsuario,String nombreUsuario, String apellidoUsuario, String correoEUsuario, String telUsuario, String contraseñaUsuario) {
         this.nombreUsuario = nombreUsuario;
         this.apellidoUsuario = apellidoUsuario;
         this.idUsuario = idUsuario;
         this.correoEUsuario = correoEUsuario;
         this.telUsuario = telUsuario;
         this.contraseñaUsuario = contraseñaUsuario;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNombreUsuario() {
@@ -32,14 +42,6 @@ public class Usuario {
 
     public void setApellidoUsuario(String apellidoUsuario) {
         this.apellidoUsuario = apellidoUsuario;
-    }
-
-    public String getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(String idUsuario) {
-        this.idUsuario = idUsuario;
     }
 
     public String getCorreoEUsuario() {

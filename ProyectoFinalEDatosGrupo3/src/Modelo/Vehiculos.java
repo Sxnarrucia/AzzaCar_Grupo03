@@ -11,17 +11,24 @@ package Modelo;
 public class Vehiculos {
 
     //Atributos
-    private String color, marca, tipo, estado;
-    private int id, anio, cilindraje, modelo, kilometraje, cantidadDePuertas, capacidadDeCarga;
+    private String color, marca, tipo, estado, modelo;
+    private int id, anio, cilindraje, kilometraje, cantidadDePuertas, capacidadDeCarga;
     private Cliente cliente;
     private Usuario vendedor;
 
+    private static int nuevoIdVehiculo;
+
+    public static void setNuevoId() {
+        nuevoIdVehiculo++;
+    }
+
     //Constructor
-    public Vehiculos(String color, String marca, String tipo, int id, int anio, int cilindraje, int modelo, int kilometraje, int cantidadDePuertas, int capacidadDeCarga, String estado) {
+    public Vehiculos(String color, String marca, String tipo, String modelo, String estado, int anio, int cilindraje, int kilometraje, int cantidadDePuertas, int capacidadDeCarga) {
+        setNuevoId();
         this.color = color;
         this.marca = marca;
         this.tipo = tipo;
-        this.id = id;
+        this.id = nuevoIdVehiculo;
         this.anio = anio;
         this.cilindraje = cilindraje;
         this.modelo = modelo;
@@ -36,10 +43,6 @@ public class Vehiculos {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getColor() {
@@ -82,11 +85,11 @@ public class Vehiculos {
         this.cilindraje = cilindraje;
     }
 
-    public int getModelo() {
+    public String getModelo() {
         return modelo;
     }
 
-    public void setModelo(int modelo) {
+    public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
@@ -141,7 +144,7 @@ public class Vehiculos {
     //to string
     @Override
     public String toString() {
-        return "Vehiculos: " + "Color: " + color + ", Marca: " + marca
+        return "ID Vehiculo: " + id + ", Color: " + color + ", Marca: " + marca
                 + ", Tipo: " + tipo + ", Año: " + anio
                 + ", Cilindraje: " + cilindraje + ", Modelo: " + modelo
                 + ", Kilometraje: " + kilometraje + "\n"

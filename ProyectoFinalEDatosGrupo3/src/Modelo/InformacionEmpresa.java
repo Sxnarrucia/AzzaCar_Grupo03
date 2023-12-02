@@ -1,4 +1,4 @@
-package proyectofinaledatosgrupo3;
+package Modelo;
 
 
 public class InformacionEmpresa {

@@ -9,13 +9,14 @@ package Modelo;
  * @author jefer
  */
 public class nodoVehiculos {
- //Atributos
+    //Atributos
+
     private Vehiculos dato;
-    private nodoVehiculos next,back;
+    private nodoVehiculos next, back;
 
     public nodoVehiculos(Vehiculos dato) {
-    this.dato=dato;
-    this.back=this.next=null;
+        this.dato = dato;
+        this.back = this.next = null;
     }
     //gets and sets
 
@@ -46,7 +47,7 @@ public class nodoVehiculos {
 
     @Override
     public String toString() {
-        return "NodoC{" + "dato=" + dato + ", next=" + next + ", back=" + back + '}';
+        return "Vehiculos: {" + dato;
     }
 
 }

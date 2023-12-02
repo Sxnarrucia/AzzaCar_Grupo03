@@ -1,19 +1,18 @@
-
 package Modelo;
 
-
 public class Cliente {
-    
+
     private int idCliente;
     private String nombreCliente;
     private String apellidosCliente;
     private int cedulaCliente;
     private String correoCliente;
     private int numCliente;
-    
+    private int totalComprados;
+
     private static int nuevoIdCliente;
-    
-    public static void setNuevoId(){
+
+    public static void setNuevoId() {
         nuevoIdCliente++;
     }
 
@@ -28,17 +27,9 @@ public class Cliente {
         this.cedulaCliente = cedulaCliente;
         this.correoCliente = correoCliente;
         this.numCliente = numCliente;
+        this.totalComprados = 0;
     }
 
-    public Cliente(int idCliente, String nombreCliente, String apellidosCliente, int cedulaCliente, String correoCliente, int numCliente) {
-        this.idCliente = idCliente;
-        this.nombreCliente = nombreCliente;
-        this.apellidosCliente = apellidosCliente;
-        this.cedulaCliente = cedulaCliente;
-        this.correoCliente = correoCliente;
-        this.numCliente = numCliente;
-    }
-    
     public int getIdCliente() {
         return idCliente;
     }
@@ -86,12 +77,21 @@ public class Cliente {
     public void setNumCliente(int numCliente) {
         this.numCliente = numCliente;
     }
-    
-    @Override
-    public String toString(){
-       return  "ID: " + idCliente + ", Nombre: " + nombreCliente + ", Apellidos: " 
-               + apellidosCliente + ", Cedula: " + cedulaCliente + ", Correo: " 
-               + correoCliente + ", Numero: " + numCliente + '}';
+
+    public int getTotalComprados() {
+        return totalComprados;
     }
-    
+
+    public void setTotalComprados(int totalComprados) {
+        this.totalComprados = totalComprados;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + idCliente + ", Nombre: " + nombreCliente + ", Apellidos: "
+                + apellidosCliente + ", Cedula: " + cedulaCliente + ", Correo: "
+                + correoCliente + ", Numero: " + numCliente + ", Total de Autos Comprados: "
+                + totalComprados + '}';
+    }
+
 }
