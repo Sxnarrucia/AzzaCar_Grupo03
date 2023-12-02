@@ -68,10 +68,13 @@ public class Usuario {
     public void setContraseñaUsuario(String contraseñaUsuario) {
         this.contraseñaUsuario = contraseñaUsuario;
     }
-
+    
+  
     @Override
     public String toString() {
-        return "Usuario{" + nombreUsuario + ", Apellido Usuario=" + apellidoUsuario + ", ID Usuario=" + idUsuario + ", Correo Usuario=" + correoEUsuario + ", Telefono Usuario=" + telUsuario + '}';
+        return "Usuario{" + nombreUsuario + ", Apellido Usuario=" + apellidoUsuario 
+                + ", ID Usuario=" + idUsuario + ", Correo Usuario=" + correoEUsuario 
+                + ", Telefono Usuario=" + telUsuario +'}';
     }
 
 }

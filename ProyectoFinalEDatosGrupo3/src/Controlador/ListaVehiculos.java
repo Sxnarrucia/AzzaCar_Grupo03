@@ -1,7 +1,7 @@
 package Controlador;
 
 import Modelo.Cliente;
-import Modelo.NodoVehiculos;
+import Modelo.NodoVehiculo;
 import Modelo.Usuario;
 import Modelo.Vehiculo;
 import java.awt.HeadlessException;
@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class ListaVehiculos {
 
-    private NodoVehiculos cabeza;
+    private NodoVehiculo cabeza;
 
     public ListaVehiculos() {
         this.cabeza = null;
@@ -17,7 +17,7 @@ public class ListaVehiculos {
 
     public void inserta(Vehiculo vDato) {
         //Crear el nuevo nodo a insertar
-        NodoVehiculos nuevo = new NodoVehiculos(vDato);
+        NodoVehiculo nuevo = new NodoVehiculo(vDato);
 
         if (cabeza == null) {
             //Lista es vacia
@@ -34,7 +34,7 @@ public class ListaVehiculos {
 
         } else {
             //para todos los casos que no se cumpla el if y else if
-            NodoVehiculos aux = this.cabeza;
+            NodoVehiculo aux = this.cabeza;
             while (aux.getSiguiente() != null
                     && aux.getSiguiente().getDato().getId() < vDato.getId()) {
 
@@ -53,7 +53,7 @@ public class ListaVehiculos {
             vehiculo = cabeza.getDato();
             return vehiculo;
         } else {
-            NodoVehiculos aux = cabeza;
+            NodoVehiculo aux = cabeza;
             while (aux.getSiguiente() != null && aux.getSiguiente().getDato().getId() != id) {
                 aux = aux.getSiguiente();
             }
@@ -139,7 +139,7 @@ public class ListaVehiculos {
             }
 
         } else {
-            NodoVehiculos aux = cabeza;
+            NodoVehiculo aux = cabeza;
             while (aux.getSiguiente() != null && aux.getSiguiente().getDato().getId() <= id) {
                 aux = aux.getSiguiente();
             }
@@ -211,41 +211,59 @@ public class ListaVehiculos {
                     }
                 }
             } else {
-                System.out.println("No existe");
+                JOptionPane.showMessageDialog(null, "No existe");
             }
         }
     }
 
-    public void registrarVenta(Cliente cliente, Usuario usuario) {
-        int idVehiculo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID del Vehiculo a vender o reservar"));
-        if (cabeza.getDato().getId() == idVehiculo) {
-            cabeza.getDato().setCliente(cliente);
-            cabeza.getDato().setVendedor(usuario);
-            cabeza.getDato().setEstado("Vendido");
-            int totalCompras = cliente.getTotalComprados() + 1;
-            cliente.setTotalComprados(totalCompras);
-        } else {
-            NodoVehiculos aux = cabeza;
-            while (aux.getSiguiente() != null && aux.getSiguiente().getDato().getId() != idVehiculo) {
+    public void cantidadVentasPorUsuario(int id) {
+        NodoVehiculo aux = cabeza;
+        int cantidad = 0;
+        if (aux.getDato().getEstado().equals("Vendido")) {
+            while (aux != null) {
+                Vehiculo vehiculo = aux.getDato();
+                if (vehiculo.getVendedor() != null && vehiculo.getVendedor().getIdUsuario() == id) {
+                    cantidad++;
+                }
                 aux = aux.getSiguiente();
             }
-            if (aux.getSiguiente() != null) {
-                if (aux.getDato().getId() == idVehiculo) {
-                    aux.getDato().setCliente(cliente);
-                    aux.getDato().setVendedor(usuario);
-                    aux.getDato().setEstado("Vendido");
-                    int totalCompras = cliente.getTotalComprados() + 1;
-                    cliente.setTotalComprados(totalCompras);
-            }
+            JOptionPane.showMessageDialog(null, "El vendedor ha vendido: " + cantidad + " vehiculos");
+        } else {
+            JOptionPane.showMessageDialog(null, "El vendedor no tiene ventas registradas");
         }
-        JOptionPane.showMessageDialog(null, "Venta Exitosa");
     }
+
+    public void cantidadReservasPorUsuario(int id) {
+        NodoVehiculo aux = cabeza;
+        int cantidad = 0;
+        if (aux.getDato().getEstado().equals("Reservado")) {
+            while (aux != null) {
+                Vehiculo vehiculo = aux.getDato();
+                if (vehiculo.getVendedor() != null && vehiculo.getVendedor().getIdUsuario() == id) {
+                    cantidad++;
+                }
+                aux = aux.getSiguiente();
+            }
+            JOptionPane.showMessageDialog(null, "El vendedor ha reservado: " + cantidad + " vehiculos");
+        } else {
+            JOptionPane.showMessageDialog(null, "El vendedor no tiene reservas registradas");
+        }
+    }
+    
+    public void listarVehiculos(){
+        NodoVehiculo aux = cabeza;
+        int i = 0;
+        while (aux != null) {            
+            aux = aux.getSiguiente();
+            i++;
+        }
+        JOptionPane.showMessageDialog(null, "Hay " + i + " vehiculos registrados");
     }
 
     @Override
     public String toString() {
         String r = "";
-        NodoVehiculos aux = cabeza;
+        NodoVehiculo aux = cabeza;
         while (aux != null) {
             r += aux.toString() + "\n";
             aux = aux.getSiguiente();

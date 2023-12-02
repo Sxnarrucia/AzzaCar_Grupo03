@@ -3,8 +3,6 @@ package Controlador;
 import Modelo.NodoUsuario;
 import Modelo.Usuario;
 import java.io.BufferedWriter;
-import java.io.DataOutputStream;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.nio.charset.StandardCharsets;
 import javax.swing.JOptionPane;
@@ -110,6 +108,11 @@ public class ListaUsuarios {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    
+    public boolean verificarUsuario(String correo, String password){
+        NodoUsuario aux = cabeza;
+        return correo.equals(aux.getDato().getCorreoEUsuario()) || password.equals(aux.getDato().getContraseñaUsuario());
     }
 
     @Override

@@ -27,7 +27,7 @@ public class Vehiculo {
     public Vehiculo() {
     }
     
-    public Vehiculo(String color, String marca, String tipo, String modelo, String estado, int anio, int cilindraje, int kilometraje, int cantidadDePuertas, int capacidadDeCarga) {
+    public Vehiculo(String color, String marca, String tipo, String modelo, int anio, int cilindraje, int kilometraje, int cantidadDePuertas, int capacidadDeCarga) {
         setNuevoId();
         this.color = color;
         this.marca = marca;
@@ -39,7 +39,7 @@ public class Vehiculo {
         this.kilometraje = kilometraje;
         this.cantidadDePuertas = cantidadDePuertas;
         this.capacidadDeCarga = capacidadDeCarga;
-        this.estado = estado;
+        this.estado = "Disponible";
         this.cliente = null;
         this.vendedor = null;
     }

@@ -9,6 +9,7 @@ public class Cliente {
     private String correoCliente;
     private int numCliente;
     private int totalComprados;
+    private int totalReservados;
 
     private static int nuevoIdCliente;
 
@@ -28,6 +29,7 @@ public class Cliente {
         this.correoCliente = correoCliente;
         this.numCliente = numCliente;
         this.totalComprados = 0;
+        this.totalReservados = 0;
     }
 
     public int getIdCliente() {
@@ -86,12 +88,21 @@ public class Cliente {
         this.totalComprados = totalComprados;
     }
 
+    public int getTotalReservados() {
+        return totalReservados;
+    }
+
+    public void setTotalReservados(int totalReservados) {
+        this.totalReservados = totalReservados;
+    }
+    
+
     @Override
     public String toString() {
         return "ID: " + idCliente + ", Nombre: " + nombreCliente + ", Apellidos: "
                 + apellidosCliente + ", Cedula: " + cedulaCliente + ", Correo: "
                 + correoCliente + ", Numero: " + numCliente + ", Total de Autos Comprados: "
-                + totalComprados + '}';
+                + totalComprados + ", Total de Autos Reservados: " + totalReservados +'}';
     }
 
 }

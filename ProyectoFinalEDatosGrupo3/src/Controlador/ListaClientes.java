@@ -1,13 +1,13 @@
 package Controlador;
 
-import Modelo.NodoClientes;
+import Modelo.NodoCliente;
 import Modelo.Cliente;
 import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
 public class ListaClientes {
 
-    private NodoClientes cabeza;
+    private NodoCliente cabeza;
 
     public ListaClientes() {
         this.cabeza = null;
@@ -26,7 +26,7 @@ public class ListaClientes {
             return;
         }
         //Crear el nuevo nodo a insertar
-        NodoClientes nuevo = new NodoClientes(cDato);
+        NodoCliente nuevo = new NodoCliente(cDato);
 
         if (cabeza == null) {
             //Lista es vacia
@@ -43,7 +43,7 @@ public class ListaClientes {
 
         } else {
             //para todos los casos que no se cumpla el if y else if
-            NodoClientes aux = this.cabeza;
+            NodoCliente aux = this.cabeza;
             while (aux.getSiguiente() != null
                     && aux.getSiguiente().getDato().getIdCliente() < cDato.getIdCliente()) {
 
@@ -62,7 +62,7 @@ public class ListaClientes {
         } else if (cabeza.getDato().getCedulaCliente() == cId) {
             return true;
         } else {
-            NodoClientes aux = cabeza;
+            NodoCliente aux = cabeza;
             while (aux.getSiguiente() != null && aux.getDato().getCedulaCliente() != cId) {
                 aux = aux.getSiguiente();
             }
@@ -76,7 +76,7 @@ public class ListaClientes {
             cliente = cabeza.getDato();
             return cliente;
         } else {
-            NodoClientes aux = cabeza;
+            NodoCliente aux = cabeza;
             while (aux.getSiguiente() != null && aux.getSiguiente().getDato().getCedulaCliente() != id) {
                 aux = aux.getSiguiente();
             }
@@ -133,7 +133,7 @@ public class ListaClientes {
                 }
             }
         } else {
-            NodoClientes aux = cabeza;
+            NodoCliente aux = cabeza;
             while (aux.getSiguiente() != null && aux.getSiguiente().getDato().getIdCliente() <= id) {
                 aux = aux.getSiguiente();
             }
@@ -198,17 +198,17 @@ public class ListaClientes {
         if (cabeza.getDato().getIdCliente() == id) {
             cabeza = cabeza.getSiguiente();
         } else {
-            NodoClientes aux = cabeza;
+            NodoCliente aux = cabeza;
             while (aux.getSiguiente().getDato().getIdCliente() != id) {
                 aux = aux.getSiguiente();
             }
-            NodoClientes siguiente = aux.getSiguiente().getSiguiente();
+            NodoCliente siguiente = aux.getSiguiente().getSiguiente();
             aux.setSiguiente(siguiente);
         }
     }
 
     public boolean existeClienteID(int idCliente) {
-        NodoClientes aux = cabeza;
+        NodoCliente aux = cabeza;
         while (aux != null) {
             if (aux.getDato().getCedulaCliente() == idCliente) {
                 return true;
@@ -218,10 +218,54 @@ public class ListaClientes {
         return false;
     }
 
+    public void comprasRealizadas() {
+        String r = "Clientes con compras: \n";
+        NodoCliente aux = cabeza;
+        while (aux != null) {
+            Cliente cliente = aux.getDato();
+            if (tieneVentas(cliente)) {
+                r += cliente.toString() + "\n";
+            }
+            aux = aux.getSiguiente();
+        }
+        JOptionPane.showMessageDialog(null, r);
+    }
+
+    private boolean tieneVentas(Cliente cliente) {
+        return cliente.getTotalComprados() != 0;
+    }
+
+    public void reservasRealizadas() {
+        String r = "Clientes con reservas: \n";
+        NodoCliente aux = cabeza;
+        while (aux != null) {
+            Cliente cliente = aux.getDato();
+            if (tieneReservas(cliente)) {
+                r += cliente.toString() + "\n";
+            }
+            aux = aux.getSiguiente();
+        }
+        JOptionPane.showMessageDialog(null, r);
+    }
+
+    private boolean tieneReservas(Cliente cliente) {
+        return cliente.getTotalReservados() != 0;
+    }
+    
+        public void listarClientes(){
+        NodoCliente aux = cabeza;
+        int i = 0;
+        while (aux != null) {            
+            aux = aux.getSiguiente();
+            i++;
+        }
+        JOptionPane.showMessageDialog(null, "Hay " + i + " clientes registrados");
+    }
+
     @Override
     public String toString() {
         String r = "";
-        NodoClientes aux = cabeza;
+        NodoCliente aux = cabeza;
         while (aux != null) {
             r += aux.toString() + "\n";
             aux = aux.getSiguiente();

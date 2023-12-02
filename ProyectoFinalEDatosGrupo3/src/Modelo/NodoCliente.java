@@ -1,11 +1,11 @@
 package Modelo;
 
-public class NodoClientes {
+public class NodoCliente {
 
     private Cliente dato;
-    private NodoClientes siguiente;
+    private NodoCliente siguiente;
 
-    public NodoClientes(Cliente dato) {
+    public NodoCliente(Cliente dato) {
         this.dato = dato;
         this.siguiente = null;
     }
@@ -18,11 +18,11 @@ public class NodoClientes {
         this.dato = dato;
     }
 
-    public NodoClientes getSiguiente() {
+    public NodoCliente getSiguiente() {
         return siguiente;
     }
 
-    public void setSiguiente(NodoClientes siguiente) {
+    public void setSiguiente(NodoCliente siguiente) {
         this.siguiente = siguiente;
     }
 

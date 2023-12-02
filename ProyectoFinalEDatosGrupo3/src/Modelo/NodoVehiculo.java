@@ -1,11 +1,11 @@
 package Modelo;
 
-public class NodoVehiculos {
+public class NodoVehiculo {
 
     private Vehiculo dato;
-    private NodoVehiculos siguiente;
+    private NodoVehiculo siguiente;
 
-    public NodoVehiculos(Vehiculo dato) {
+    public NodoVehiculo(Vehiculo dato) {
         this.dato = dato;
         this.siguiente = null;
     }
@@ -18,11 +18,11 @@ public class NodoVehiculos {
         this.dato = dato;
     }
 
-    public NodoVehiculos getSiguiente() {
+    public NodoVehiculo getSiguiente() {
         return siguiente;
     }
 
-    public void setSiguiente(NodoVehiculos siguiente) {
+    public void setSiguiente(NodoVehiculo siguiente) {
         this.siguiente = siguiente;
     }
 
