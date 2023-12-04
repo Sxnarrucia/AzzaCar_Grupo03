@@ -15,6 +15,14 @@ public class ListaVehiculos {
         this.cabeza = null;
     }
 
+    public void ingresaDatos() {
+        inserta(new Vehiculo("Rojo", "Toyota", "Hashback", "Corolla GR", 2023, 1600, 0, 2, 1000));
+        inserta(new Vehiculo("Azul", "Nissan", "SUV", "Qashqai", 2010, 1300, 100000, 4, 1000));
+        inserta(new Vehiculo("Negro", "Honda", "Sedan", "Civic", 2018, 2000, 50000, 4, 1500));
+        inserta(new Vehiculo("Amarillo", "BMW", "Sedan", "M4 Coupe", 2023, 3000, 0, 2, 1500));
+
+    }
+
     public void inserta(Vehiculo vDato) {
         //Crear el nuevo nodo a insertar
         NodoVehiculo nuevo = new NodoVehiculo(vDato);
@@ -233,31 +241,41 @@ public class ListaVehiculos {
         }
     }
 
-    public void cantidadReservasPorUsuario(int id) {
-        NodoVehiculo aux = cabeza;
-        int cantidad = 0;
-        if (aux.getDato().getEstado().equals("Reservado")) {
-            while (aux != null) {
-                Vehiculo vehiculo = aux.getDato();
-                if (vehiculo.getVendedor() != null && vehiculo.getVendedor().getIdUsuario() == id) {
-                    cantidad++;
+    public void cantidadReservasPorUsuario(int idR) {
+        NodoVehiculo auxR = cabeza;
+        int cantidadR = 0;
+        if (auxR.getDato().getEstado().equals("Reservado")) {
+            while (auxR != null) {
+                Vehiculo vehiculoR = auxR.getDato();
+                if (vehiculoR.getVendedor() != null && vehiculoR.getVendedor().getIdUsuario() == idR) {
+                    cantidadR++;
                 }
-                aux = aux.getSiguiente();
+                auxR = auxR.getSiguiente();
             }
-            JOptionPane.showMessageDialog(null, "El vendedor ha reservado: " + cantidad + " vehiculos");
+            JOptionPane.showMessageDialog(null, "El vendedor ha reservado: " + cantidadR + " vehiculos");
         } else {
             JOptionPane.showMessageDialog(null, "El vendedor no tiene reservas registradas");
         }
     }
-    
-    public void listarVehiculos(){
+
+    public void listarVehiculos() {
         NodoVehiculo aux = cabeza;
-        int i = 0;
-        while (aux != null) {            
+        int contadorDisponible = 0;
+        int contadorReservado = 0;
+        int contadorVendido = 0;
+        while (aux != null) {
+            if (aux.getDato().getEstado().equals("Disponible")) {
+                contadorDisponible++;
+            } else if (aux.getDato().getEstado().equals("Reservado")) {
+                contadorReservado++;
+            } else {
+                contadorVendido++;
+            }
             aux = aux.getSiguiente();
-            i++;
         }
-        JOptionPane.showMessageDialog(null, "Hay " + i + " vehiculos registrados");
+        JOptionPane.showMessageDialog(null, "Hay " + contadorDisponible
+                + " vehiculos disponibles\n " + contadorReservado + " reservados\n "
+                + "y " + contadorVendido + " vendidos.");
     }
 
     @Override

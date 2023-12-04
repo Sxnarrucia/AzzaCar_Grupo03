@@ -14,9 +14,10 @@ public class ListaClientes {
     }
 
     public void ingresarDatos() {
-        ListaClientes l = new ListaClientes();
-        l.inserta(new Cliente("Esteban", "Sanarrucia Molina", 1, "esteban9926@hotmail.com", 60319926));
-        l.inserta(new Cliente("Jose", "Perez Ortega", 2, "jose@hotmail.com", 60948504));
+        inserta(new Cliente("Esteban", "Sanarrucia Molina", 1, "esteban@gmail.com", 71047034));
+        inserta(new Cliente("Jorge", "Ramirez Brenes", 2, "jorge@gmail.com", 89437436));
+        inserta(new Cliente("Michael", "Perez Amador", 3, "michael@gmail.com", 21449850));
+        inserta(new Cliente("Francisco", "Sanarrucia Zeledon", 4, "francisco@gmail.com", 81048934));
     }
 
     public void inserta(Cliente cDato) {
@@ -251,11 +252,11 @@ public class ListaClientes {
     private boolean tieneReservas(Cliente cliente) {
         return cliente.getTotalReservados() != 0;
     }
-    
-        public void listarClientes(){
+
+    public void listarClientes() {
         NodoCliente aux = cabeza;
         int i = 0;
-        while (aux != null) {            
+        while (aux != null) {
             aux = aux.getSiguiente();
             i++;
         }

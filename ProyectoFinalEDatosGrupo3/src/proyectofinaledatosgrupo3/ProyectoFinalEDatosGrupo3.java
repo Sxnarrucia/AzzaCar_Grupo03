@@ -22,6 +22,9 @@ public class ProyectoFinalEDatosGrupo3 {
         String correo = JOptionPane.showInputDialog("Ingrese el correo para iniciar sesión:");
         String password = JOptionPane.showInputDialog("Ingrese la contraseña para iniciar sesión:");
         if (LU.verificarUsuario(correo, password)) {
+            LC.ingresarDatos();
+            LU.ingresarDatos();
+            LV.ingresaDatos();
             mostrarMenu();
         } else {
             JOptionPane.showMessageDialog(null, "¡Contraseña incorrecta!", "AzzaCar", 1);

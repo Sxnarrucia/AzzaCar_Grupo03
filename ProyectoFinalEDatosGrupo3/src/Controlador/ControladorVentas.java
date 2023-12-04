@@ -10,7 +10,7 @@ public class ControladorVentas {
 
     public void RegistrarVenta(Cliente cliente, Usuario usuario, Vehiculo vehiculo) {
         try {
-            int VentaReserva = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la opción que desea: "
+            int VentaReserva = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la opción que desea: \n"
                     + "1 = Vender un vehículo \n"
                     + "2 = Reservar un vehículo \n"));
             switch (VentaReserva) {

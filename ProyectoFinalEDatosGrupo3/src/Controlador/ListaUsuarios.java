@@ -15,6 +15,13 @@ public class ListaUsuarios {
         this.cabeza = null;
     }
 
+    public void ingresarDatos() {
+        inserta(new Usuario(1, "Maribel", "Martinez Serrado", "maribel@gmail.com", "1234", "hola123"));
+        inserta(new Usuario(2, "Katherine", "Garcia Garcia", "katherine@gmail.com", "3456", "1234hola"));
+        inserta(new Usuario(3, "Alexandra", "Lopez Montero", "alexandra@gmail.com", "9859", "holaMundo"));
+        inserta(new Usuario(4, "Patricio", "Romero Pacheco", "patricio@gmail.com", "8462", "abcde"));
+    }
+
     public void inserta(Usuario cDato) {
         //Crear el nuevo nodo a insertar
         NodoUsuario nuevo = new NodoUsuario(cDato);
@@ -109,8 +116,8 @@ public class ListaUsuarios {
             e.printStackTrace();
         }
     }
-    
-    public boolean verificarUsuario(String correo, String password){
+
+    public boolean verificarUsuario(String correo, String password) {
         NodoUsuario aux = cabeza;
         return correo.equals(aux.getDato().getCorreoEUsuario()) || password.equals(aux.getDato().getContraseñaUsuario());
     }

@@ -153,8 +153,8 @@ public class Vehiculo {
                 + ", Cilindraje: " + cilindraje + ", Modelo: " + modelo
                 + ", Kilometraje: " + kilometraje + "\n"
                 + "Cantidad De Puertas: " + cantidadDePuertas
-                + ", Capacidad De Carga: " + capacidadDeCarga + ", Estado: " + estado
-                + ", Cliente: " + cliente + ", Vendedor: " + vendedor + '}';
+                + ", Capacidad De Carga: " + capacidadDeCarga + ", Estado: " + estado + "\n"
+                + "Cliente: " + cliente + "\n" +"Vendedor: " + vendedor + "\n" + "----------------------------";
     }
 
 }
